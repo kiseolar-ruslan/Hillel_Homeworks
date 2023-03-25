@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb94c5bd-e5e4-4369-94cb-76c3fb3adc11" name="Changes" comment="">
+    <list default="true" id="fb94c5bd-e5e4-4369-94cb-76c3fb3adc11" name="Changes" comment="delete space">
       <change beforePath="$PROJECT_DIR$/03_ lesson/05_dz/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/03_ lesson/05_dz/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03_ lesson/07_dz/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/03_ lesson/07_dz/index.php" afterDir="false" />
     </list>
@@ -17,7 +17,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/03_ lesson/07_dz" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
