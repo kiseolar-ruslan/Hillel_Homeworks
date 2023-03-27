@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb94c5bd-e5e4-4369-94cb-76c3fb3adc11" name="Changes" comment="homework" />
+    <list default="true" id="fb94c5bd-e5e4-4369-94cb-76c3fb3adc11" name="Changes" comment="Homeworks" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +134,7 @@
       <workItem from="1679822629967" duration="22101000" />
       <workItem from="1679863215946" duration="7000" />
       <workItem from="1679865456306" duration="272000" />
-      <workItem from="1679917749231" duration="3143000" />
+      <workItem from="1679917749231" duration="3532000" />
     </task>
     <task id="LOCAL-00001" summary="delete space">
       <created>1679753168843</created>
@@ -199,7 +199,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679921555395</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Homework">
+      <created>1679921653001</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679921653001</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Homeworks">
+      <created>1679922039500</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679922039500</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +234,9 @@
     <MESSAGE value="delete space" />
     <MESSAGE value="test" />
     <MESSAGE value="homework" />
-    <option name="LAST_COMMIT_MESSAGE" value="homework" />
+    <MESSAGE value="Homework" />
+    <MESSAGE value="Homeworks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Homeworks" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
