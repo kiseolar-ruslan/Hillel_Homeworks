@@ -1,19 +1,19 @@
 <?php
 
-//$filesDir = 'files';
+$filesDir = 'files';
 
-//foreach ($_FILES as $file) {
-//    //check errors
-//    if ($file['error']) {
-//        echo 'Errors';
-//        exit;
-//    }
-//
-//    $fileName = $file['name'];
-//    $tmpName = $file['tmp_name'];
-//
-//    move_uploaded_file($tmpName, "$filesDir/$fileName");
-//}
+foreach ($_FILES as $file) {
+    //check errors
+    if ($file['error']) {
+        echo 'Errors';
+        exit;
+    }
+
+    $fileName = $file['name'];
+    $tmpName = $file['tmp_name'];
+
+    move_uploaded_file($tmpName, "$filesDir/$fileName");
+}
 
 
 
