@@ -1,0 +1,82 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"fb94c5bd-e5e4-4369-94cb-76c3fb3adc11\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/02_ lesson/04_dz/index.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/02_ lesson/04_dz/index.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/03_ lesson/05_dz\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/03_ lesson/05_dz\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/03_ lesson/05_dz/index.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/03_ lesson/05_dz/index.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/03_ lesson/07_dz\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/03_ lesson/07_dz\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/03_ lesson/07_dz/index.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/03_ lesson/07_dz/index.php\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ComposerSettings\">\n    <execution />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/03_ lesson/07_dz\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2N0FGyEh0EzDX8JtzY71ew5h4Xu\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Applications/MAMP/htdocs/homeworks&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"fb94c5bd-e5e4-4369-94cb-76c3fb3adc11\" name=\"Changes\" comment=\"\" />\n      <created>1678793001320</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1678793001320</updated>\n      <workItem from=\"1678793003048\" duration=\"332000\" />\n      <workItem from=\"1678793822744\" duration=\"347000\" />\n      <workItem from=\"1678801479717\" duration=\"10000\" />\n      <workItem from=\"1678805244456\" duration=\"9000\" />\n      <workItem from=\"1678805279886\" duration=\"4000\" />\n      <workItem from=\"1678819118817\" duration=\"519000\" />\n      <workItem from=\"1678822310300\" duration=\"34000\" />\n      <workItem from=\"1678822358124\" duration=\"59000\" />\n      <workItem from=\"1678822505587\" duration=\"211000\" />\n      <workItem from=\"1678822844804\" duration=\"51000\" />\n      <workItem from=\"1678822905792\" duration=\"59000\" />\n      <workItem from=\"1678832269654\" duration=\"72000\" />\n      <workItem from=\"1678886828360\" duration=\"232000\" />\n      <workItem from=\"1678887689316\" duration=\"218000\" />\n      <workItem from=\"1678896948540\" duration=\"3625000\" />\n      <workItem from=\"1678974524959\" duration=\"2355000\" />\n      <workItem from=\"1678982522575\" duration=\"198000\" />\n      <workItem from=\"1678982909086\" duration=\"13000\" />\n      <workItem from=\"1678983027494\" duration=\"7000\" />\n      <workItem from=\"1678983052173\" duration=\"2039000\" />\n      <workItem from=\"1679000178118\" duration=\"64000\" />\n      <workItem from=\"1679073228970\" duration=\"1272000\" />\n      <workItem from=\"1679094186730\" duration=\"321000\" />\n      <workItem from=\"1679137358794\" duration=\"178000\" />\n      <workItem from=\"1679142314093\" duration=\"1725000\" />\n      <workItem from=\"1679148526138\" duration=\"2155000\" />\n      <workItem from=\"1679172176825\" duration=\"75000\" />\n      <workItem from=\"1679173502760\" duration=\"533000\" />\n      <workItem from=\"1679225128697\" duration=\"1688000\" />\n      <workItem from=\"1679228044269\" duration=\"5279000\" />\n      <workItem from=\"1679310820634\" duration=\"5597000\" />\n      <workItem from=\"1679394801196\" duration=\"55000\" />\n      <workItem from=\"1679407151036\" duration=\"1289000\" />\n      <workItem from=\"1679484479410\" duration=\"2730000\" />\n      <workItem from=\"1679490540675\" duration=\"2186000\" />\n      <workItem from=\"1679495282195\" duration=\"6671000\" />\n      <workItem from=\"1679518403402\" duration=\"492000\" />\n      <workItem from=\"1679524138894\" duration=\"506000\" />\n      <workItem from=\"1679526015531\" duration=\"199000\" />\n      <workItem from=\"1679569834776\" duration=\"19826000\" />\n      <workItem from=\"1679651319280\" duration=\"4026000\" />\n      <workItem from=\"1679657763158\" duration=\"1084000\" />\n      <workItem from=\"1679671322719\" duration=\"2255000\" />\n      <workItem from=\"1679698114192\" duration=\"142000\" />\n      <workItem from=\"1679699731832\" duration=\"516000\" />\n      <workItem from=\"1679700752244\" duration=\"19000\" />\n      <workItem from=\"1679750881683\" duration=\"108000\" />\n      <workItem from=\"1679751033411\" duration=\"934000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <expand />\n    <select />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 4ac8d3022138cf51f4e0fcc125a515ebecb2d93b)
++++ b/.idea/workspace.xml	(date 1679752771053)
+@@ -4,13 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="fb94c5bd-e5e4-4369-94cb-76c3fb3adc11" name="Changes" comment="">
++    <list default="true" id="fb94c5bd-e5e4-4369-94cb-76c3fb3adc11" name="Changes" comment="delete space">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/02_ lesson/04_dz/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/02_ lesson/04_dz/index.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/03_ lesson/05_dz" beforeDir="false" afterPath="$PROJECT_DIR$/03_ lesson/05_dz" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/03_ lesson/05_dz/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/03_ lesson/05_dz/index.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/03_ lesson/07_dz" beforeDir="false" afterPath="$PROJECT_DIR$/03_ lesson/07_dz" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/03_ lesson/07_dz/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/03_ lesson/07_dz/index.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -22,6 +17,19 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/03_ lesson/07_dz" />
++  </component>
++  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
++  "lastFilter": {
++    "state": "OPEN"
++  }
++}]]></component>
++  <component name="GithubPullRequestsUISettings">
++    <option name="selectedUrlAndAccountId">
++      <UrlAndAccount>
++        <option name="accountId" value="1869d208-491f-45e5-8b75-79783a1b3b62" />
++        <option name="url" value="https://github.com/kiseolar-ruslan/Hillel_homeworks.git" />
++      </UrlAndAccount>
++    </option>
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+@@ -101,12 +109,35 @@
+       <workItem from="1679699731832" duration="516000" />
+       <workItem from="1679700752244" duration="19000" />
+       <workItem from="1679750881683" duration="108000" />
+-      <workItem from="1679751033411" duration="934000" />
++      <workItem from="1679751033411" duration="1311000" />
++    </task>
++    <task id="LOCAL-00001" summary="delete space">
++      <created>1679752715246</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1679752715246</updated>
+     </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="delete space" />
++    <option name="LAST_COMMIT_MESSAGE" value="delete space" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
