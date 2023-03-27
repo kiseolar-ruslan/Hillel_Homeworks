@@ -34,12 +34,16 @@ foreach ($_FILES as $file) {
     $fileName = $file['name'];
     $tmpName = $file['tmp_name'];
 
-    if (is_dir($fileDir)) {
+    if (file_exists($fileDir)) {
         move_uploaded_file($tmpName, "$fileDir/$fileName");
+    } elseif ($file['error']) {
+        echo 'Error';
+        exit;
     } else {
         mkdir($fileDir);
         move_uploaded_file($tmpName, "$fileDir/$fileName");
     }
+
 }
 
 
