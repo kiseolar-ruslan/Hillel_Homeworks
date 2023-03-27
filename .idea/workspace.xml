@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb94c5bd-e5e4-4369-94cb-76c3fb3adc11" name="Changes" comment="Homeworks" />
+    <list default="true" id="fb94c5bd-e5e4-4369-94cb-76c3fb3adc11" name="Changes" comment="Homework" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +134,7 @@
       <workItem from="1679822629967" duration="22101000" />
       <workItem from="1679863215946" duration="7000" />
       <workItem from="1679865456306" duration="272000" />
-      <workItem from="1679917749231" duration="3532000" />
+      <workItem from="1679917749231" duration="3859000" />
     </task>
     <task id="LOCAL-00001" summary="delete space">
       <created>1679753168843</created>
@@ -213,7 +213,28 @@
       <option name="project" value="LOCAL" />
       <updated>1679922039500</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Homeworks">
+      <created>1679922068070</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1679922068070</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Homework">
+      <created>1679922205144</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679922205144</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Homework">
+      <created>1679922288686</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1679922288686</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,9 +255,9 @@
     <MESSAGE value="delete space" />
     <MESSAGE value="test" />
     <MESSAGE value="homework" />
-    <MESSAGE value="Homework" />
     <MESSAGE value="Homeworks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Homeworks" />
+    <MESSAGE value="Homework" />
+    <option name="LAST_COMMIT_MESSAGE" value="Homework" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
