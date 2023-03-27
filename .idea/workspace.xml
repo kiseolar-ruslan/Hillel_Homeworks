@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb94c5bd-e5e4-4369-94cb-76c3fb3adc11" name="Changes" comment="Homework">
-      <change afterPath="$PROJECT_DIR$/04_lesson/09_dz/server.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_lesson/09_dz/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_ lesson/05_dz/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/03_ lesson/05_dz/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_ lesson/05_dz" beforeDir="false" afterPath="$PROJECT_DIR$/03_ lesson/05_dz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/04_lesson/08_dz/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/04_lesson/08_dz/server.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/04_lesson/09_dz/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/04_lesson/09_dz/index.php" afterDir="false" />
     </list>
@@ -142,7 +140,7 @@
       <workItem from="1679863215946" duration="7000" />
       <workItem from="1679865456306" duration="272000" />
       <workItem from="1679917749231" duration="4115000" />
-      <workItem from="1679922673639" duration="3415000" />
+      <workItem from="1679922673639" duration="3932000" />
     </task>
     <task id="LOCAL-00001" summary="delete space">
       <created>1679753168843</created>
@@ -277,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679924151475</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Homework">
+      <created>1679929360882</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1679929360882</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

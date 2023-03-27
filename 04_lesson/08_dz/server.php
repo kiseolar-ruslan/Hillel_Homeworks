@@ -16,7 +16,6 @@
 //}
 
 
-
 $personalData = [];
 
 foreach ($_POST as $key => $item) {
@@ -34,11 +33,13 @@ foreach ($_FILES as $file) {
     $fileName = $file['name'];
     $tmpName = $file['tmp_name'];
 
-    if (file_exists($fileDir)) {
-        move_uploaded_file($tmpName, "$fileDir/$fileName");
-    } elseif ($file['error']) {
+    if ($file['error']) {
         echo 'Error';
         exit;
+    }
+
+    if (file_exists($fileDir)) {
+        move_uploaded_file($tmpName, "$fileDir/$fileName");
     } else {
         mkdir($fileDir);
         move_uploaded_file($tmpName, "$fileDir/$fileName");

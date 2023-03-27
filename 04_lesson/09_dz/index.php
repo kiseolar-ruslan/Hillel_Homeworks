@@ -13,7 +13,6 @@
     <title>Hillel Homework</title>
 </head>
 <body>
-<?php  ?>
 <table>
     <tr>
         <th></th>
