@@ -1,6 +1,5 @@
 <?php
 
-
 //$filesDir = 'files';
 
 //foreach ($_FILES as $file) {
