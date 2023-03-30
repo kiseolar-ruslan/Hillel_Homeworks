@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb94c5bd-e5e4-4369-94cb-76c3fb3adc11" name="Changes" comment="Homework" />
+    <list default="true" id="fb94c5bd-e5e4-4369-94cb-76c3fb3adc11" name="Changes" comment="Homework">
+      <change beforePath="$PROJECT_DIR$/05_lesson/11_dz/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/05_lesson/11_dz/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,7 +150,7 @@
       <workItem from="1680124209030" duration="79000" />
       <workItem from="1680170222589" duration="1159000" />
       <workItem from="1680173735000" duration="560000" />
-      <workItem from="1680174430465" duration="304000" />
+      <workItem from="1680174430465" duration="673000" />
     </task>
     <task id="LOCAL-00001" summary="delete space">
       <created>1679753168843</created>
@@ -346,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680174086481</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Homework">
+      <created>1680174863984</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1680174863984</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
