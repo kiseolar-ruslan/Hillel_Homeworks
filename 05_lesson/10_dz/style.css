@@ -1,0 +1,86 @@
+h1 {
+    margin: 0 0 5px 0;
+}
+
+p {
+    margin: 5px 0 10px 0;
+}
+
+label {
+    display: block;
+}
+
+.form {
+    width: 600px;
+    padding: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #bacbd9;
+    border-radius: 20px;
+}
+
+.form_caption {
+    text-align: center;
+}
+
+.container_person {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.text_message {
+    margin-left: 27px;
+    margin-right: 27px;
+    margin-bottom: 5px;
+    width: 90%;
+}
+
+.label_message {
+    text-align: center;
+}
+
+.button {
+    width: 220px;
+    height: 40px;
+    background-color: #529bf1;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #1a65af;
+}
+
+.container_button {
+    text-align: center;
+}
+
+.header_appeal,
+.header_device {
+    font-size: 18px;
+    text-align: center;
+}
+
+.container_appeal {
+    display: flex;
+    justify-content: space-between;
+    border-color: #0080ff;
+}
+
+.container_device {
+    margin-top: 5px;
+    border-color: #fff200;
+}
+
+.file {
+    margin-left: 200px;
+}
+
+.person-file {
+    margin-bottom: 20px;
+}
