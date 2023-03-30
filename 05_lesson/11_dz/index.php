@@ -16,6 +16,7 @@ function htmlList ($array, $listTag = "<ul>") {
     return $listTag;
 }
 
+
 $randomArray = ['one', 'two', 'three'];
 echo htmlList($randomArray, "<ol>");
 ?>
