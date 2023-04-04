@@ -3,7 +3,7 @@
 // які елементи масиву повинні бути включені в новий масив. Поверніть новий
 // масив з елементами, які відповідають умові, використовуючи callback функцію
 // (В якості callback функції напишіть анонімну функцію яка перевіряє чи є число парним).
-function filterNumbers($array, $callBack)
+function filterNumbers(array $array, $callBack)
 {
     $newArray = [];
     foreach ($array as $item) {
