@@ -1,0 +1,17 @@
+@media (min-width: 600px) {
+    .container-fluid {
+        max-width: 600px;
+    }
+}
+
+.container-fluid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-title {
+    margin-top: 50px;
+    text-align: center;
+}
