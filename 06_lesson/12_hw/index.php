@@ -3,7 +3,7 @@
 // які елементи масиву повинні бути включені в новий масив. Поверніть новий
 // масив з елементами, які відповідають умові, використовуючи callback функцію
 // (В якості callback функції напишіть анонімну функцію яка перевіряє чи є число парним).
-function filterNumbers(array $array, callable $callBack) : array
+function filterNumbers(array $array, callable $callBack): array
 {
     $newArray = [];
     foreach ($array as $item) {
@@ -46,7 +46,7 @@ echo $numbers($abc) . "<br>";
 // використовувати одну з php функцій).
 $upperWords = fn($string) => ucfirst($string);
 $arrayStrings = ['apple', 'samsung', 'xiaomi'];
-array_walk($arrayStrings, function(&$value) use ($upperWords) {
+array_walk($arrayStrings, function (&$value) use ($upperWords) {
     $value = $upperWords($value);
 });
 print_r($arrayStrings);
@@ -56,15 +56,34 @@ echo "<br>";
 // до функції за ссилкою.
 $number = 2;
 $randomArray = [1, 2, 3, 4, 5,];
-function myFunction(array $array, string $number) : array
+function myFunction(array $array, string $number): array
 {
     for ($i = 0; $i < count($array); $i++) {
         $array[$i] *= $number;
     }
     return $array;
 }
+
 print_r(myFunction($randomArray, $number));
+echo "<br>";
+//6.Напишіть функцію, яка приймає масив слів і повертає масив зі словами,
+//які мають довжину менше заданого числа. Функція має приймати два параметри:
+//масив слів та ціле число, що визначає максимальну довжину слова. Функція
+//має змінювати масив слів, переданий до неї за силкою.
 
+function stringLengths(array &$arrayRows, int $maxLength): array
+{
+    $rows = [];
+    foreach ($arrayRows as $arrayRow) {
+        if (mb_strlen($arrayRow) < $maxLength) {
+            $rows[] = $arrayRow;
+        }
+    }
+    $arrayRows = $rows;
+    return $arrayRows;
+}
 
-
-
+$randomArray = ['qqqqqqqqqqq', 'qqqqqqqqqqq', 'qqqqqqqqqqq', 'q', 'asd', 'asdfd'];
+print_r(stringLengths($randomArray, 6));
+echo "<br>";
+print_r($randomArray);
