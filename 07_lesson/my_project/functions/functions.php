@@ -1,34 +1,61 @@
 <?php
-//Debugger
-function debugger(array $array): void
+/**
+ * Just for debug arrays
+ * @param array $array
+ * @return void
+ */
+function debug(array $array): void
 {
     echo "<pre>";
     print_r($array);
-    echo "<pre>";
+    echo "</pre>";
     exit;
 }
 
-//Set Alerts
-function setAlerts(string $value, string $message): void
+/**
+ * Set messages into SESSION
+ * @param string|array $message
+ * @param string $type
+ * @return void
+ */
+function setMessages(string|array $message, string $type = 'alerts'): void
 {
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
 
-    if (!isset($_SESSION['alerts'])) {
-        $_SESSION['alerts'] = [];
-    }
-
-    if (isset($_SESSION['alerts'])) {
-        $_SESSION['alerts'][$value] = $message;
-    }
+    $_SESSION[$type][] = $message;
 }
 
-//Return Session
-function returnSession(string $nameValue): void
+/**
+ * Get messages from SESSION
+ * @param string $type
+ * @return array
+ */
+function getMessages(string $type): array
 {
-    if (isset($_SESSION['alerts'][$nameValue])) {
-        print_r($_SESSION['alerts'][$nameValue]);
-        unset($_SESSION['alerts'][$nameValue]);
-    }
+
+    $message = $_SESSION[$type] ?? [];
+
+    unset($_SESSION[$type]);
+
+    return $message;
+}
+
+/**
+ * Check this if SESSION for this type exists
+ * @param string $type
+ * @return bool
+ */
+function existsMessages(string $type): bool
+{
+    return isset($_SESSION[$type]);
+}
+
+/**
+ * @return bool
+ */
+function checkAuth(): bool
+{
+    return $_COOKIE['auth'] ?? false;
 }
