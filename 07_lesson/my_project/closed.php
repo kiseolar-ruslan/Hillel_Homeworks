@@ -4,7 +4,7 @@ session_start();
 require_once __DIR__ . '/functions/functions.php';
 
 if (!checkAuth()) {
-    setMessages('Method not allowed!', 'warnings');
+    setMessages('Page for authorized users!', 'warnings');
     header('Location: http://localhost/homeworks/07_lesson/my_project/');
 }
 

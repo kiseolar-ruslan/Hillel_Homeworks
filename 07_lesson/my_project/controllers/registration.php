@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $name = $_POST['name'];
 
 $errors = validate($_POST, [
-    'name' => 'required|min_length[5]|max_length[255]',
+    'name' => 'required|min_length[5]|',
     'email' => 'required|email|min_length[6]',
     'password' => 'required|min_length[5]|max_length[255]|password',
     'password_confirm' => 'required|password_confirm'
