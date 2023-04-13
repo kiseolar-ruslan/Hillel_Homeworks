@@ -53,6 +53,7 @@ function existsMessages(string $type): bool
 }
 
 /**
+ * Check authentication
  * @return bool
  */
 function checkAuth(): bool
