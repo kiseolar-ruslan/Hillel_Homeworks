@@ -34,12 +34,11 @@ function setMessages(string|array $message, string $type = 'alerts'): void
  */
 function getMessages(string $type): array
 {
-
-    $message = $_SESSION[$type] ?? [];
+    $messages = $_SESSION[$type] ?? [];
 
     unset($_SESSION[$type]);
 
-    return $message;
+    return $messages;
 }
 
 /**

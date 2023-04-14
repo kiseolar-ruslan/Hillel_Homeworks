@@ -53,7 +53,7 @@ function validate(array $fields, array $rules): array|bool
             }
 
             //Password Confirm
-            //Сохранить пароли в отдельные переменные и сравнить их
+            //todo doesn't work!
             if ($rule === 'password_confirm') {
                 if ($fields[$fieldName] !== $_POST['password']) {
                     $errors[$fieldName][] = "The $fieldName field is invalid!";
@@ -115,7 +115,6 @@ function maxLength(string $string, int $length): bool
     return mb_strlen($string) < $length;
 }
 
-
 /**
  * Check email for validity
  * @param string $email
@@ -151,12 +150,3 @@ function password(string $password): bool
     $pattern = '/^[a-zA-Zа-яА-Я\d]{6,}$/';
     return preg_match($pattern, $password);
 }
-
-
-//function passwordConfirm(string $password, string $confirmPassword): bool
-//{
-//    if (!$password === $confirmPassword) {
-//        return false;
-//    }
-//    return true;
-//}
