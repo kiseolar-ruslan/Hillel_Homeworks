@@ -52,24 +52,25 @@ $st->execute([
 //вытягиваем данные с БД
 $user = $st->fetchColumn();
 
-//Проверяем на существование юзера по email в БД и сохраняем данные
+//Проверяем на существование юзера по email
+if ($user) {
+    setMessages('This email is already taken!', 'warnings');
+    header('Location: ' . HOMEPAGE . ' ');
+}
+
+//Регистрируем пользователя и сохраняем данные в БД
 $queryDataUser = "INSERT INTO `users` (`email`,`name`,`password`) VALUES (:email, :name, :password)";
 
 $stDataUser = $connect->prepare($queryDataUser);
 
-if ($user) {
-    setMessages('This email is already taken!', 'warnings');
-    header('Location: ' . HOMEPAGE . ' ');
-} else {
-    if (empty($errors)) {
-        $stDataUser->execute([
-            'email' => $email,
-            'name' => $name,
-            'password' => $passwordHash
-        ]);
-        setcookie('auth', true, time() + (3600 * 24 * 7), '/');
-        header('Location: http://localhost/homeworks/07_lesson/my_project/closed.php');
-    }
+if (empty($errors)) {
+    $stDataUser->execute([
+        'email' => $email,
+        'name' => $name,
+        'password' => $passwordHash
+    ]);
+    setcookie('auth', true, time() + (3600 * 24 * 7), '/');
+    header('Location: http://localhost/homeworks/07_lesson/my_project/closed.php');
 }
 
 

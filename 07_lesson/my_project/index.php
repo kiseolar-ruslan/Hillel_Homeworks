@@ -42,7 +42,7 @@ foreach ($users as $user) {
 $sqlQuery = rtrim($sqlQuery, ',');
 
 
-$connect->query($sqlQuery);
+//$connect->query($sqlQuery);
 
 
 ?>
