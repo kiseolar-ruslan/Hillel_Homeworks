@@ -36,7 +36,6 @@ if ($errors) {
     header('Location: ' . HOMEPAGE . ' ');
 }
 
-//debug($_POST);
 
 //3.Registration
 
@@ -73,5 +72,4 @@ if ($user) {
     }
 }
 
-//print_r(empty($errors));
 

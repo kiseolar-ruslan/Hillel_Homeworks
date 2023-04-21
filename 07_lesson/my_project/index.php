@@ -41,9 +41,8 @@ foreach ($users as $user) {
 
 $sqlQuery = rtrim($sqlQuery, ',');
 
-//print_r($sqlQuery);
 
-//$connect->query($sqlQuery);
+$connect->query($sqlQuery);
 
 
 ?>
