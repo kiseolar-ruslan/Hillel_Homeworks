@@ -21,6 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+$passwordHash = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
 
 $errors = validate($_POST, [
     'name' => 'required|min_length[5]|',
@@ -59,15 +61,17 @@ $stDataUser = $connect->prepare($queryDataUser);
 if ($user) {
     setMessages('This email is already taken!', 'warnings');
     header('Location: ' . HOMEPAGE . ' ');
+} else {
+    if (empty($errors)) {
+        $stDataUser->execute([
+            'email' => $email,
+            'name' => $name,
+            'password' => $passwordHash
+        ]);
+        setcookie('auth', true, time() + (3600 * 24 * 7), '/');
+        header('Location: http://localhost/homeworks/07_lesson/my_project/closed.php');
+    }
 }
 
-if (!isset($errors)){
-    $stDataUser->execute([
-        'email' => $email,
-        'name' => $name,
-        'password' => $password
-    ]);
-    setcookie('auth', true, time() + (3600 * 24 * 7), '/');
-    header('Location: http://localhost/homeworks/07_lesson/my_project/closed.php');
-}
+//print_r(empty($errors));
 
