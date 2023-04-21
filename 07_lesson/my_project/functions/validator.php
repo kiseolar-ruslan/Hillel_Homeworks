@@ -53,7 +53,6 @@ function validate(array $fields, array $rules): array|bool
             }
 
             //Password Confirm
-            //todo doesn't work!
             if ($rule === 'password_confirm') {
                 if ($fields[$fieldName] !== $_POST['password']) {
                     $errors[$fieldName][] = "The $fieldName field is invalid!";
@@ -150,3 +149,13 @@ function password(string $password): bool
     $pattern = '/^[a-zA-Zа-яА-Я\d]{6,}$/';
     return preg_match($pattern, $password);
 }
+
+///**
+// * Сheck the mail for existence
+// * @param string $email
+// * @return bool
+// */
+//function existEmail(string $email): bool
+//{
+//    return "SELECT count(*) FROM `users` WHERE `email` = $email" ?? false;
+//}

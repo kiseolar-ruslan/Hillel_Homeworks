@@ -1,7 +1,48 @@
 <?php
 session_start();
 
-require_once __DIR__ . '/functions/functions.php';
+include_once __DIR__ . '/database/database.php';
+include_once __DIR__ . '/functions/functions.php';
+
+$users = [
+    [
+        'email' => 'email1@gmail.com',
+        'name' => 'name1',
+        'password' => 'password1'
+    ],
+    [
+        'email' => 'email2@gmail.com',
+        'name' => 'name2',
+        'password' => 'password2'
+    ],
+    [
+        'email' => 'email3@gmail.com',
+        'name' => 'name3',
+        'password' => 'password3'
+    ],
+    [
+        'email' => 'email4@gmail.com',
+        'name' => 'name4',
+        'password' => 'password4'
+    ],
+    [
+        'email' => 'email5@gmail.com',
+        'name' => 'name5',
+        'password' => 'password5'
+    ],
+
+];
+
+$sqlQuery = "INSERT INTO `users` (`email`, `name`, `password`) VALUES ";
+
+foreach ($users as $user) {
+    $sqlQuery .= "('" . $user['email'] . "', '" . $user['name'] . "', '" . $user['password'] . "'),";
+}
+
+$sqlQuery = rtrim($sqlQuery, ',');
+//print_r($sqlQuery);
+//$connect->query($sqlQuery);
+
 
 ?>
 <!doctype html>
