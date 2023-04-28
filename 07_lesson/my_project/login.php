@@ -10,7 +10,6 @@ if (!checkAuth()) {
     header('Location: ' . HOMEPAGE . ' ');
 }
 
-
 ?>
 <!doctype html>
 <html lang="en">
