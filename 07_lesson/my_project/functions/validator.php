@@ -14,14 +14,14 @@ function validate(array $fields, array $rules): array|bool
         foreach ($arrayRules as $rule) {
 
             //Required Rule
-            if ($rule === 'required') {
+            if (str_contains($rule, 'required')) {
                 if (!required($fields[$fieldName])) {
                     $errors[$fieldName][] = "Field $fieldName is required!";
                 }
             }
 
             //Min Length Rule
-            if (mb_strpos($rule, 'min_length') !== false) {
+            if (str_contains($rule, 'min_length')) {
                 preg_match("/\[(\d+)\]/", $rule, $matches);
                 $length = $matches[1];
                 if (!minLength($fields[$fieldName], $length)) {
@@ -30,7 +30,7 @@ function validate(array $fields, array $rules): array|bool
             }
 
             //Max Length Rule
-            if (mb_strpos($rule, 'max_length') !== false) {
+            if (str_contains($rule, 'max_length')) {
                 preg_match("/\[(\d+)\]/", $rule, $matches);
                 $length = $matches[1];
                 if (!maxLength($fields[$fieldName], $length)) {
@@ -38,24 +38,25 @@ function validate(array $fields, array $rules): array|bool
                 }
             }
 
-            //Email
-            if ($rule === 'email') {
+            //Email Rule
+            if (str_contains($rule, 'email')) {
                 if (!validateEmail($fields[$fieldName])) {
                     $errors[$fieldName][] = "The $fieldName field is invalid!";
                 }
             }
 
-            //Password
-            if ($rule === 'password') {
+            //Password Rule
+            if (str_contains($rule, 'password')) {
                 if (!password($fields[$fieldName])) {
-                    $errors[$fieldName][] = "The $fieldName field is invalid!";
+                    $errors[$fieldName][] = "The $fieldName must be at least 5 characters long, include 1 char A-Z,
+                    1 char a-z, 1 char 0-9!";
                 }
             }
 
-            //Password Confirm
-            if ($rule === 'password_confirm') {
-                if ($fields[$fieldName] !== $_POST['password']) {
-                    $errors[$fieldName][] = "The $fieldName field is invalid!";
+            //Password Confirm Rule
+            if (str_contains($rule, 'confirm')) {
+                if ($fields[$fieldName . '_confirm'] !== $fields[$fieldName]) {
+                    $errors[$fieldName . '_confirm'][] = "Password should be matches!";
                 }
             }
 
@@ -141,21 +142,55 @@ function validateEmail(string $email): bool
 
 /**
  * Check password for validity
+ *
  * @param string $password
  * @return bool
  */
 function password(string $password): bool
 {
-    $pattern = '/^[a-zA-Zа-яА-Я\d]{6,}$/';
+    $pattern = '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{5,}$/';
+
     return preg_match($pattern, $password);
 }
 
-///**
-// * Сheck the mail for existence
-// * @param string $email
-// * @return bool
-// */
-//function existEmail(string $email): bool
-//{
-//    return "SELECT count(*) FROM `users` WHERE `email` = $email" ?? false;
-//}
+/**
+ * set validation errors
+ * @param array $errors
+ * @return void
+ */
+function setValidationErrors(array $errors): void
+{
+    $_SESSION['validation_errors'] = $errors;
+}
+
+/**
+ * get validation errors
+ * @param $key
+ * @return array
+ */
+function getValidationErrors($key): array
+{
+    $errors = $_SESSION['validation_errors'][$key] ?? [];
+
+    unset($_SESSION['validation_errors'][$key]);
+
+    return $errors;
+}
+
+/**
+ * @param array $data
+ * @return void
+ */
+function setDataUserFromForm(array $data): void
+{
+    $_SESSION['user_data'] = $data;
+}
+
+/**
+ * @return array
+ */
+function getDataUserFromSession(): array
+{
+    return $_SESSION['user_data'] ?? [];
+}
+
