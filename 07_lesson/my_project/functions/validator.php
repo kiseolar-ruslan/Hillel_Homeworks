@@ -177,20 +177,5 @@ function getValidationErrors($key): array
     return $errors;
 }
 
-/**
- * @param array $data
- * @return void
- */
-function setDataUserFromForm(array $data): void
-{
-    $_SESSION['user_data'] = $data;
-}
 
-/**
- * @return array
- */
-function getDataUserFromSession(): array
-{
-    return $_SESSION['user_data'] ?? [];
-}
 

@@ -51,7 +51,7 @@ include_once __DIR__ . '/functions/validator.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hillel</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
@@ -72,7 +72,7 @@ include_once __DIR__ . '/functions/validator.php';
             <div class="mb-3">
                 <label for="fullName" class="form-label">Full Name</label>
                 <input type="text" name="name" class="form-control" id="fullName"
-                       placeholder="Ruslan Krietsu" value="">
+                       placeholder="Ruslan Krietsu" value="<?= getValue('register_form', 'name') ?>">
             </div>
             <?php if ($errors = getValidationErrors('name')) { ?>
                 <?php include './templates/_validation_errors.php'; ?>
@@ -80,7 +80,7 @@ include_once __DIR__ . '/functions/validator.php';
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
                 <input type="email" name="email" class="form-control" id="email"
-                       placeholder="Enter email">
+                       placeholder="Enter email" value="<?= getValue('register_form', 'email') ?>">
             </div>
             <?php if ($errors = getValidationErrors('email')) { ?>
                 <?php include './templates/_validation_errors.php'; ?>

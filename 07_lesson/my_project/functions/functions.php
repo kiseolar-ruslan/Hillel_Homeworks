@@ -59,3 +59,25 @@ function checkAuth(): bool
 {
     return $_COOKIE['auth'] ?? false;
 }
+
+/**
+ * Set values from form into session
+ * @param array $values
+ * @param string $type
+ * @return void
+ */
+function setValues(string $type, array $values): void
+{
+    $_SESSION[$type] = $values;
+}
+
+/**
+ * Get value form from session
+ * @param string $type
+ * @param string $key
+ * @return string
+ */
+function getValue(string $type, string $key): string
+{
+    return $_SESSION[$type][$key] ?? '';
+}

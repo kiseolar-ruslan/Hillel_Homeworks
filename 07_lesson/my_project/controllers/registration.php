@@ -16,7 +16,11 @@ include_once __DIR__ . '/../database/database_connection.php';
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     setMessages('Method not allowed!', 'warnings');
     header('Location: ' . HOMEPAGE . ' ');
+    exit;
 }
+
+//Set values from form into session
+setValues('register_form', $_POST);
 
 //2.
 $name = $_POST['name'];
@@ -26,11 +30,7 @@ $passwordHash = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
 //збереження значення полів форми в сесію.
 //setDataUserFromForm($_POST);
-//$formData = getDataUserFromSession();
-//$userName = $formData['name'] ?? '';
-//$userEmail = $formData['email'] ?? '';
-//$userPassword = $formData['password'] ?? '';
-//$userPasswordConfirm = $formData['password_confirm'] ?? '';
+
 
 $errors = validate($_POST, [
     'name' => 'required|min_length[5]|',
@@ -41,6 +41,7 @@ $errors = validate($_POST, [
 if ($errors) {
     setValidationErrors($errors);
     header('Location: ' . HOMEPAGE . ' ');
+    exit;
 }
 
 
@@ -50,6 +51,7 @@ if (checkUserExist($connect)) {
     $errors['email'][] = 'This email is already taken!';
     setValidationErrors($errors);
     header('Location: ' . HOMEPAGE . ' ');
+    exit;
 }
 
 //Регистрируем пользователя и сохраняем данные в БД
@@ -62,7 +64,7 @@ $userData = [
 
 registrationUser($connect, $userData);
 setcookie('auth', true, time() + (3600 * 24 * 7), '/');
-header('Location: http://localhost/homeworks/07_lesson/my_project/login.php');
+header('Location: http://localhost/homeworks/07_lesson/my_project/closed.php');
 
 
 

@@ -9,7 +9,7 @@ define('DB_NAME', 'hillel_homeworks');
 
 
 /**
- * Home page
+ * Mane page
  */
 define('HOMEPAGE', 'http://localhost/homeworks/07_lesson/my_project/');
 
