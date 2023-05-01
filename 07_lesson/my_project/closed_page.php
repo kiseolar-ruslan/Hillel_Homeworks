@@ -3,10 +3,12 @@ session_start();
 
 require_once __DIR__ . '/functions/functions.php';
 include_once __DIR__ . '/config.php';
+include_once __DIR__ . '/functions/database.php';
+
 
 if (!checkAuth()) {
     setMessages('Page for authorized users!', 'warnings');
-    header('Location: ' . HOMEPAGE . ' ');
+    header('Location: ' . HOMEPAGE);
 }
 
 ?>

@@ -52,15 +52,6 @@ function existsMessages(string $type): bool
 }
 
 /**
- * Check authentication
- * @return bool
- */
-function checkAuth(): bool
-{
-    return $_COOKIE['auth'] ?? false;
-}
-
-/**
  * Set values from form into session
  * @param array $values
  * @param string $type
@@ -80,4 +71,61 @@ function setValues(string $type, array $values): void
 function getValue(string $type, string $key): string
 {
     return $_SESSION[$type][$key] ?? '';
+}
+
+/**
+ * Generate random token for user by id
+ * @param int $id
+ * @return string
+ */
+function generateToken(int $id): string
+{
+    $time = time();
+    $randPart = rand(1000, 9999);
+    return hash('sha256', $id . $randPart . $time);
+}
+
+/**
+ * Get user IP
+ * @return string
+ */
+function getUserIp(): string
+{
+    return $_SERVER['REMOTE_ADDR'];
+}
+
+/**
+ * Get user agent(the system(browser) from which the user is sitting)
+ * @return string
+ */
+function getUserAgent(): string
+{
+    return $_SERVER['HTTP_USER_AGENT'];
+}
+
+/**
+ * Все значение приходящие с post method будут: экранироваться, и весь html code превращаться в html entity
+ * @param string $name
+ * @param string $type
+ * @return string
+ */
+function post(string $name, string $type = 'default'): string
+{
+    // экранирование
+    $value = filter_input(INPUT_POST, $name, FILTER_SANITIZE_ADD_SLASHES);
+    // html code превращаем в html entity
+    $value = htmlspecialchars($value);
+
+    switch ($type) {
+        case 'email':
+            $value = filter_var($value, FILTER_SANITIZE_EMAIL); break;
+        case 'string':
+            $value = filter_var($value, FILTER_SANITIZE_STRING); break;
+        case 'int':
+            $value = filter_var($value, FILTER_SANITIZE_NUMBER_INT); break;
+        case 'float':
+            $value = filter_var($value, FILTER_SANITIZE_NUMBER_FLOAT); break;
+    }
+
+    return $value;
 }

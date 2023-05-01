@@ -3,6 +3,7 @@
 include_once __DIR__ . '/../config.php';
 
 /**
+ * DataBase connection
  * Try - Выполняется если ошибки нет
  * Catch - Выполняется если ошибка есть
  * Finally - Выполняется в любом случае

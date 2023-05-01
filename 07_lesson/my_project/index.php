@@ -5,6 +5,11 @@ include_once __DIR__ . '/database/database_connection.php';
 include_once __DIR__ . '/functions/functions.php';
 include_once __DIR__ . '/functions/validator.php';
 
+//$errors['email'][] = 'This email is already taken2!';
+//$errors['email'][] = 'This email is already taken3!';
+//
+//debug($errors);
+
 //$users = [
 //    [
 //        'email' => 'email1@gmail.com',

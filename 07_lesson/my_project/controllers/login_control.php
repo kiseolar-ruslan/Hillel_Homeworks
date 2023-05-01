@@ -9,26 +9,22 @@ include_once __DIR__ . '/../database/database_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     setMessages('Method not allowed!', 'warnings');
-    header('Location: http://localhost/homeworks/07_lesson/my_project/login.php');
+    header('Location: http://localhost/homeworks/07_lesson/my_project/login_page.php');
 }
 
-$email = $_POST['email'];
-$password = $_POST['password'];
-$passwordHash = password_hash($_POST['password'], PASSWORD_BCRYPT);
+//Set values from form into session
+setValues('register_form', $_POST);
 
 $errors = validate($_POST, [
-    'email' => 'required|email|min_length[6]',
-    'password' => 'required|min_length[5]|max_length[255]|password',
+    'email' => 'required|email',
+    'password' => 'required|password',
 ]);
 
 if ($errors) {
     setValidationErrors($errors);
-    header('Location: http://localhost/homeworks/07_lesson/my_project/login.php');
+    header('Location: http://localhost/homeworks/07_lesson/my_project/login_page.php');
+    exit;
 }
 
-if (checkUserExist($connect)) {
-    $errors['email'][] = 'This email is already taken!';
-    setValidationErrors($errors);
-    header('Location: http://localhost/homeworks/07_lesson/my_project/login.php');
-}
-
+//todo написать sql запрос, который будет вытягивать email, password с БД и сравнивать с введенным паролем и почтой. Возможно понадобятся функции с файла database.php.
+//todo обработать данные при вставке пользователем(от sql инъекций, превращать html в html сущности и тд..).

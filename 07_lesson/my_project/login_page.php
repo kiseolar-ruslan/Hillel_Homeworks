@@ -3,13 +3,6 @@ session_start();
 
 include_once __DIR__ . '/functions/functions.php';
 include_once __DIR__ . '/functions/validator.php';
-include_once __DIR__ . '/config.php';
-include_once __DIR__ . '/database/database_connection.php';
-
-if (!checkAuth()) {
-    setMessages('Page for authorized users!', 'warnings');
-    header('Location: ' . HOMEPAGE . ' ');
-}
 
 ?>
 <!doctype html>
@@ -25,6 +18,7 @@ if (!checkAuth()) {
 <body>
 <div class="container-fluid">
     <div class="row">
+        <h1 class="form-title">Sign In</h1>
         <?php if (existsMessages('warnings')) { ?>
             <div class="alert alert-danger" role="alert">
                 <?php
@@ -34,11 +28,10 @@ if (!checkAuth()) {
                 ?>
             </div>
         <?php } ?>
-        <h1 class="form-title">Sign In</h1>
         <form action="controllers/login_control.php" method="post">
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" value="<?= getValue('register_form', 'email') ?>">
                 <div id="emailHelp" class="form-text">We will never give your email to anyone.</div>
             </div>
             <?php if ($errors = getValidationErrors('email')) { ?>
