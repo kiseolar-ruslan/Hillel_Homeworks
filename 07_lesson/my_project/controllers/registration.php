@@ -28,8 +28,9 @@ setValues('register_form', $_POST);
 $password = $_POST['password'];
 $passwordHash = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-$errors = validate($_POST, [
-    'name' => 'required|min_length[5]|',
+// все что приходит от пользователя всегда нужно фильтровать
+$errors = validate(filterPost($_POST), [
+    'name' => 'required|min_length[5]',
     'email' => 'required|email|min_length[6]',
     'password' => 'required|min_length[5]|max_length[255]|password|confirm',
 ]);

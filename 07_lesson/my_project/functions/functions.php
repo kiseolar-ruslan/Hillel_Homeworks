@@ -103,6 +103,7 @@ function getUserAgent(): string
     return $_SERVER['HTTP_USER_AGENT'];
 }
 
+//todo do the same for the GET parameter
 /**
  * Все значение приходящие с post method будут: экранироваться, и весь html code превращаться в html entity
  * @param string $name
@@ -128,4 +129,42 @@ function post(string $name, string $type = 'default'): string
     }
 
     return $value;
+}
+
+/**
+ * filter all POST elements
+ * @param string $name
+ * @return string
+ */
+function allPost(string $name): string
+{
+    // экранирование
+    $value = filter_input(INPUT_POST, $name, FILTER_SANITIZE_ADD_SLASHES);
+    // html code превращаем в html entity
+    return htmlspecialchars($value);
+}
+
+/**
+ * filtered array POST
+ * @param array $post
+ * @return array
+ */
+function filterPost(array $post): array
+{
+    $filteredPost = [];
+    foreach ($post as $key => $value) {
+        $filteredPost[$key] = allPost($key);
+    }
+
+    return $filteredPost;
+}
+
+/**
+ * refilter
+ * @param string $data
+ * @return string
+ */
+function reFilter(string $data): string
+{
+    return htmlspecialchars_decode($data);
 }
