@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 //Set values from form into session
 setValues('register_form', $_POST);
 
-$errors = validate($_POST, [
+$errors = validate(filterPost($_POST), [
     'email' => 'required|email',
     'password' => 'required|password',
 ]);
@@ -26,5 +26,5 @@ if ($errors) {
     exit;
 }
 
-//todo написать sql запрос, который будет вытягивать email, password с БД и сравнивать с введенным паролем и почтой. Возможно понадобятся функции с файла database.php.
-//todo обработать данные при вставке пользователем(от sql инъекций, превращать html в html сущности и тд..).
+//todo написать sql запрос, который будет вытягивать email, password с БД и сравнивать с введенным паролем и почтой.
+// Возможно понадобятся функции с файла database.php.

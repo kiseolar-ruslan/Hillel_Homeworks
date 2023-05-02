@@ -23,9 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 setValues('register_form', $_POST);
 
 //2.
-//$name = $_POST['name'];
-//$email = $_POST['email'];
-$password = $_POST['password'];
 $passwordHash = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
 // все что приходит от пользователя всегда нужно фильтровать
