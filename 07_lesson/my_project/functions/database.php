@@ -3,17 +3,16 @@
 /**
  * Check user exist
  * @param PDO $connect
+ * @param string $email
  * @return int
  */
-function checkUserExist(PDO $connect): int
+function checkUserExist(PDO $connect, string $email): int
 {
-    $query = "SELECT count(`id`) FROM `users` WHERE `email` = :email";
+    $query = "SELECT count(`id`) FROM `users` WHERE `email` = ?";
 //подготавливаем запрос
     $st = $connect->prepare($query);
 //выполняем подготовленный запрос и по ключу 'email' передаем почту юзера в запрос
-    $st->execute([
-        'email' => $_POST['email'],
-    ]);
+    $st->execute([$email]);
 //вытягиваем результат запроса с БД
     return $st->fetchColumn();
 }

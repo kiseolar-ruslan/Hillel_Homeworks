@@ -17,8 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 //Set values from form into session
 setValues('login_form', $_POST);
 
+// Filtered POST method
+$filteredPost = filterPost($_POST);
+
 //Validation
-$errors = validate(filterPost($_POST), [
+$errors = validate($filteredPost, [
     'email' => 'required|email|min_length[6]',
     'password' => 'required|password',
 ]);
@@ -38,7 +41,7 @@ if (!$dbUser) {
     exit;
 }
 
-if (password_verify(post('password'), $dbUser['password'])) {
+if (password_verify($filteredPost['password'], $dbUser['password'])) {
     login($connect, $dbUser['id']);
     header('Location: ' . HOME_PAGE . 'closed_page.php');
 } else {

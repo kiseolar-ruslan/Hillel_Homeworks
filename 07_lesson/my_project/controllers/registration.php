@@ -24,11 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 //Set values from form into session
 setValues('register_form', $_POST);
 
+// Filtered POST method
+$filteredPost = filterPost($_POST);
+
 //2.
-$passwordHash = password_hash($_POST['password'], PASSWORD_BCRYPT);
+$passwordHash = password_hash($filteredPost['password'], PASSWORD_BCRYPT);
 
 // все что приходит от пользователя всегда нужно фильтровать
-$errors = validate(filterPost($_POST), [
+$errors = validate($filteredPost, [
     'name' => 'required|min_length[5]',
     'email' => 'required|email|min_length[6]',
     'password' => 'required|min_length[5]|max_length[255]|password|confirm',
@@ -42,7 +45,7 @@ if ($errors) {
 
 //3.Registration
 //Check if user exist
-if (checkUserExist($connect)) {
+if (checkUserExist($connect, post('email', 'email'))) {
     $errors['email'][] = 'This email is already taken!';
     setValidationErrors($errors);
     header('Location: ' . HOME_PAGE . ' ');
@@ -51,7 +54,7 @@ if (checkUserExist($connect)) {
 
 //Регистрируем пользователя и сохраняем данные в БД
 $userData = [
-    'name' => post('name', 'string'),
+    'name' => post('name'),
     'email' => post('email', 'email'),
     'password' => $passwordHash,
     'role_id' => 2,

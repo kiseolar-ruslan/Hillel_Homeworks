@@ -121,8 +121,6 @@ function post(string $name, string $type = 'default'): string
     switch ($type) {
         case 'email':
             $value = filter_var($value, FILTER_SANITIZE_EMAIL); break;
-        case 'string':
-            $value = filter_var($value, FILTER_SANITIZE_STRING); break;
         case 'int':
             $value = filter_var($value, FILTER_SANITIZE_NUMBER_INT); break;
         case 'float':
@@ -133,7 +131,7 @@ function post(string $name, string $type = 'default'): string
 }
 
 /**
- * filter all POST elements
+ * filter POST element
  * @param string $name
  * @return string
  */
@@ -146,7 +144,7 @@ function allPost(string $name): string
 }
 
 /**
- * filtered array POST
+ * filtered all array POST
  * @param array $post
  * @return array
  */
