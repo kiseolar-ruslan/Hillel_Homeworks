@@ -104,8 +104,9 @@ function getUserAgent(): string
 }
 
 //todo do the same for the GET parameter
+
 /**
- * Все значение приходящие с post method будут: экранироваться, и весь html code превращаться в html entity
+ * Одно значение с post method будет: экранироваться, и весь html code превращаться в html entity
  * @param string $name
  * @param string $type
  * @return string
@@ -160,7 +161,6 @@ function filterPost(array $post): array
 }
 
 /**
- * refilter
  * @param string $data
  * @return string
  */
@@ -168,3 +168,4 @@ function reFilter(string $data): string
 {
     return htmlspecialchars_decode($data);
 }
+

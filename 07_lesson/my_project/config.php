@@ -11,5 +11,5 @@ define('DB_NAME', 'hillel_homeworks');
 /**
  * Mane page
  */
-define('HOMEPAGE', 'http://localhost/homeworks/07_lesson/my_project/');
+define('HOME_PAGE', 'http://localhost/homeworks/07_lesson/my_project/');
 

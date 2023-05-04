@@ -19,6 +19,21 @@ function checkUserExist(PDO $connect): int
 }
 
 /**
+ * get user password
+ * @param PDO $connect
+ * @return string
+ */
+function getUserPassword(PDO $connect): string
+{
+    $query = "SELECT `password` FROM `users` WHERE `email` = :email";
+    $st = $connect->prepare($query);
+    $st->execute([
+        'email' => $_POST['email'],
+    ]);
+    return $st->fetchColumn();
+}
+
+/**
  * Registration user
  * Try - Выполняется если ошибок нет
  * Catch - Выполняется если ошибки есть
@@ -62,9 +77,10 @@ function createSession(PDO $connect, $data): int|bool
 
 /**
  * Check authentication
+ * @param PDO $connect
  * @return bool
  */
-function checkAuth(): bool
+function checkAuth(PDO $connect): bool
 {
     $token = $_COOKIE['auth'] ?? false;
     if (!$token) {
@@ -99,3 +115,43 @@ function getSession(PDO $connect, string $token): array|bool
         return false;
     }
 }
+
+
+function getUserByEmail(PDO $connect, string $email): array|bool
+{
+    try {
+        $queryDataUser = "SELECT `id`, `email`, `password` FROM `users` WHERE `email` = ? LIMIT 1";
+        $stDataUser = $connect->prepare($queryDataUser);
+        $stDataUser->execute([$email]);
+        return $stDataUser->fetch();
+    } catch (PDOException $e) {
+        return false;
+    }
+}
+
+/**
+ * login user
+ * @param PDO $connect
+ * @param int $userId
+ * @return void
+ */
+function login(PDO $connect, int $userId): void
+{
+    $token = generateToken($userId);
+    $sessionData = [
+        'user_id' => $userId,
+        'token' => $token,
+        'user_agent' => getUserAgent(),
+        'ip' => getUserIp(),
+    ];
+
+    $sessionId = createSession($connect, $sessionData);
+    if (!$sessionId) {
+        setMessages('Data Base Error!', 'warnings');
+        header('Location: ' . HOME_PAGE . 'login_page.php');
+        exit;
+    }
+
+    setcookie('auth', $token, time() + (3600 * 24 * 7), '/');
+}
+

@@ -1,9 +1,18 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-include_once __DIR__ . '/database/database_connection.php';
+require_once __DIR__ . '/database/database_connection.php';
 include_once __DIR__ . '/functions/functions.php';
 include_once __DIR__ . '/functions/validator.php';
+include_once __DIR__ . '/functions/database.php';
+
+
+// todo to return to the page from which the request was made
+if (checkAuth($connect)) {
+    exit;
+}
 
 //$errors['email'][] = 'This email is already taken2!';
 //$errors['email'][] = 'This email is already taken3!';
@@ -56,13 +65,49 @@ include_once __DIR__ . '/functions/validator.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hillel</title>
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
+<div class="row">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary padding">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <?php if (!checkAuth($connect)) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://localhost/homeworks/07_lesson/my_project/">Registration</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="http://localhost/homeworks/07_lesson/my_project/login_page.php">Login</a>
+                        </li>
+                    <?php } ?>
+                    <?php if (checkAuth($connect)) { ?>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="http://localhost/homeworks/07_lesson/my_project/closed_page.php">Blogs</a>
+                    </li>
+                    <!--При выходе должно перебрасывать на вводную страницу где написано
+                    "Добро пожаловать на наш сайт-->
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="#">Exit</a>
+                    </li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
 <h1 class="form-title">Registration Page</h1>
-<div class="container-fluid">
+<div class="container-fluid center width">
     <div class="row">
         <?php if (existsMessages('warnings')) { ?>
             <div class="alert alert-danger" role="alert">

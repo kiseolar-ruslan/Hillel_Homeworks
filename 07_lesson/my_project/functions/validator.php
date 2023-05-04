@@ -164,11 +164,21 @@ function setValidationErrors(array $errors): void
 }
 
 /**
+ * set validation success
+ * @param array $success
+ * @return void
+ */
+function setValidationSuccess(array $success): void
+{
+    $_SESSION['validation_success'] = $success;
+}
+
+/**
  * get validation errors
  * @param $key
- * @return array
+ * @return array|string
  */
-function getValidationErrors($key): array
+function getValidationErrors($key): array|string
 {
     $errors = $_SESSION['validation_errors'][$key] ?? [];
 
@@ -177,5 +187,18 @@ function getValidationErrors($key): array
     return $errors;
 }
 
+/**
+ * get validation success
+ * @param $key
+ * @return array
+ */
+function getValidationSuccess($key): array
+{
+    $success = $_SESSION['validation_success'][$key] ?? [];
+
+    unset($_SESSION['validation_success'][$key]);
+
+    return $success;
+}
 
 

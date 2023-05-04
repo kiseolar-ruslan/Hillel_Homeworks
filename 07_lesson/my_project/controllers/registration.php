@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 require_once __DIR__ . '/../functions/functions.php';
 require_once __DIR__ . '/../functions/database.php';
@@ -15,7 +17,7 @@ include_once __DIR__ . '/../database/database_connection.php';
 //1.
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     setMessages('Method not allowed!', 'warnings');
-    header('Location: ' . HOMEPAGE);
+    header('Location: ' . HOME_PAGE);
     exit;
 }
 
@@ -34,7 +36,7 @@ $errors = validate(filterPost($_POST), [
 
 if ($errors) {
     setValidationErrors($errors);
-    header('Location: ' . HOMEPAGE);
+    header('Location: ' . HOME_PAGE);
     exit;
 }
 
@@ -43,7 +45,7 @@ if ($errors) {
 if (checkUserExist($connect)) {
     $errors['email'][] = 'This email is already taken!';
     setValidationErrors($errors);
-    header('Location: ' . HOMEPAGE . ' ');
+    header('Location: ' . HOME_PAGE . ' ');
     exit;
 }
 
@@ -58,7 +60,7 @@ $userData = [
 $userId = registrationUser($connect, $userData);
 if (!$userId) {
     setMessages('Data Base Error!', 'warnings');
-    header('Location: ' . HOMEPAGE );
+    header('Location: ' . HOME_PAGE );
     exit;
 }
 
@@ -73,12 +75,12 @@ $sessionData = [
 $sessionId = createSession($connect, $sessionData);
 if (!$sessionId) {
     setMessages('Data Base Error!', 'warnings');
-    header('Location: ' . HOMEPAGE );
+    header('Location: ' . HOME_PAGE );
     exit;
 }
 
 setcookie('auth', $token, time() + (3600 * 24 * 7), '/');
-header('Location: http://localhost/homeworks/07_lesson/my_project/closed_page.php');
+header('Location: ' . HOME_PAGE . 'closed_page.php');
 
 
 

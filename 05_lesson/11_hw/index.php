@@ -8,11 +8,19 @@
 </head>
 <body>
 <?php
-function htmlList ($array, $listTag = "<ul>") {
+/**
+ * @param array $array
+ * @param string $listTag
+ * @return string
+ */
+function htmlList (array $array, string $listTag = "<ul>"): string
+{
     foreach ($array as $item) {
         $listTag .= "<li> $item </li>";
     }
+
     $listTag .= "</ul>";
+
     return $listTag;
 }
 $randomArray = ['one', 'two', 'three'];
