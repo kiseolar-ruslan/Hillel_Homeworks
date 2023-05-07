@@ -120,11 +120,14 @@ function post(string $name, string $type = 'default'): string
 
     switch ($type) {
         case 'email':
-            $value = filter_var($value, FILTER_SANITIZE_EMAIL); break;
+            $value = filter_var($value, FILTER_SANITIZE_EMAIL);
+            break;
         case 'int':
-            $value = filter_var($value, FILTER_SANITIZE_NUMBER_INT); break;
+            $value = filter_var($value, FILTER_SANITIZE_NUMBER_INT);
+            break;
         case 'float':
-            $value = filter_var($value, FILTER_SANITIZE_NUMBER_FLOAT); break;
+            $value = filter_var($value, FILTER_SANITIZE_NUMBER_FLOAT);
+            break;
     }
 
     return $value;
@@ -167,3 +170,23 @@ function reFilter(string $data): string
     return htmlspecialchars_decode($data);
 }
 
+/**
+ * @param $file
+ * @param $to
+ * @return bool
+ */
+function moveFile($file, $to): bool
+{
+    if (!file_exists($to)) {
+        mkdir($to);
+    }
+
+    if ($file['error']) {
+        return false;
+    }
+
+    $fileName = $file['name'];
+    $tmpName = $file['tmp_name'];
+
+    return move_uploaded_file($tmpName, "$to/$fileName");
+}

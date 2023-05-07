@@ -87,8 +87,9 @@ function checkAuth(PDO $connect): bool
     }
 
     require_once __DIR__ . '/../database/database_connection.php';
-
+    $connect = connect();
     $session = getSession($connect, $token);
+
     if (!$session) {
         return false;
     }
@@ -115,7 +116,11 @@ function getSession(PDO $connect, string $token): array|bool
     }
 }
 
-
+/**
+ * @param PDO $connect
+ * @param string $email
+ * @return array|bool
+ */
 function getUserByEmail(PDO $connect, string $email): array|bool
 {
     try {
@@ -154,3 +159,55 @@ function login(PDO $connect, int $userId): void
     setcookie('auth', $token, time() + (3600 * 24 * 7), '/');
 }
 
+/**
+ * @param PDO $connect
+ * @return array|bool
+ */
+function getAllUsers(PDO $connect): array|bool
+{
+    try {
+        $queryDataUser = "SELECT `id`, `name` FROM `users`";
+        $stDataUser = $connect->prepare($queryDataUser);
+        $stDataUser->execute();
+        return $stDataUser->fetchAll();
+    } catch (PDOException $e) {
+        return false;
+    }
+}
+
+/**
+ * @param PDO $connect
+ * @param int|bool $offset
+ * @param int|bool $perPage
+ * @return array|bool
+ */
+function getAllBlogs(PDO $connect, int|bool $offset = false, int|bool $perPage = false): array|bool
+{
+    try {
+        $queryDataUser = "SELECT * FROM `blogs`";
+        if ( $offset !== false && $perPage !== false) {
+            $queryDataUser .= " LIMIT $offset, $perPage ";
+        }
+        $stDataUser = $connect->prepare($queryDataUser);
+        $stDataUser->execute();
+        return $stDataUser->fetchAll();
+    } catch (PDOException $e) {
+        return false;
+    }
+}
+
+/**
+ * @param PDO $connect
+ * @return int|bool
+ */
+function countAllBlogs(PDO $connect): int|bool
+{
+    try {
+        $queryDataUser = "SELECT count(`id`) as counter FROM `blogs`";
+        $stDataUser = $connect->prepare($queryDataUser);
+        $stDataUser->execute();
+        return $stDataUser->fetchColumn();
+    } catch (PDOException $e) {
+        return false;
+    }
+}

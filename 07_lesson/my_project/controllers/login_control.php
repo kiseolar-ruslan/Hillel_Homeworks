@@ -8,6 +8,8 @@ require_once __DIR__ . '/../functions/database.php';
 require_once __DIR__ . '/../functions/validator.php';
 include_once __DIR__ . '/../config.php';
 include_once __DIR__ . '/../database/database_connection.php';
+$connect = connect();
+
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     setMessages('Method not allowed!', 'warnings');

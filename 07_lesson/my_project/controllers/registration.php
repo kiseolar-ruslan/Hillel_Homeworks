@@ -8,6 +8,7 @@ require_once __DIR__ . '/../functions/database.php';
 require_once __DIR__ . '/../functions/validator.php';
 include_once __DIR__ . '/../config.php';
 include_once __DIR__ . '/../database/database_connection.php';
+$connect = connect();
 
 //1.Проверить метод HTTP;
 //2.Валидация данных;
