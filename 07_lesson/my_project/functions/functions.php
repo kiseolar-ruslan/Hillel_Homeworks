@@ -190,3 +190,26 @@ function moveFile($file, $to): bool
 
     return move_uploaded_file($tmpName, "$to/$fileName");
 }
+
+/**
+ * Logger
+ * @param string $message
+ * @param string $fileName
+ * @return void
+ */
+function logger(string $message, string $fileName = 'log.txt', $user = true): void
+{
+    $currentDate = date('d.m.Y / H:i:s');
+
+    $newMessage = "[$currentDate]";
+    if ($user) {
+        $userId = checkAuth();
+        $newMessage .= "[user #$userId]";
+    }
+    $newMessage .= "[$message]" . PHP_EOL; //PHP_EOL - line break
+
+    $file = fopen(BASE_PATH . '/homeworks/07_lesson/my_project/storage/logs/' . $fileName, 'a');
+    fwrite($file, $newMessage);
+    fclose($file); // close the file
+}
+

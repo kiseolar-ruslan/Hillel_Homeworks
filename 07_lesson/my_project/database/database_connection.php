@@ -8,7 +8,7 @@ include_once __DIR__ . '/../config.php';
  * Catch - Выполняется если ошибка есть
  * Finally - Выполняется в любом случае
  */
-function connect()
+function connect(): false|PDO|null
 {
     try {
         static $connect = null;
@@ -21,6 +21,7 @@ function connect()
         }
         return $connect;
     } catch (PDOException $e) {
+        logger(serialize($e), 'errors.txt', false);
         return false;
     }
 }

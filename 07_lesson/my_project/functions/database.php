@@ -76,10 +76,9 @@ function createSession(PDO $connect, $data): int|bool
 
 /**
  * Check authentication
- * @param PDO $connect
- * @return bool
+ * @return bool|int
  */
-function checkAuth(PDO $connect): bool
+function checkAuth(): bool|int
 {
     $token = $_COOKIE['auth'] ?? false;
     if (!$token) {
@@ -94,7 +93,7 @@ function checkAuth(PDO $connect): bool
         return false;
     }
 
-    return true;
+    return $session['user_id'];
 }
 
 /**
@@ -112,6 +111,7 @@ function getSession(PDO $connect, string $token): array|bool
         $stDataUser->execute([$token]);
         return $stDataUser->fetch();
     } catch (PDOException $e) {
+        logger(serialize($e), 'errors.txt', false);
         return false;
     }
 }

@@ -44,7 +44,8 @@ if (moveFile($_FILES['image'], '../storage/blogs')) {
         'content' => post('content'),
     ];
 
-    if (blogAdd($connect, $data)) {
+    if ($blogId = blogAdd($connect, $data)) {
+        logger("blog #$blogId added");
         header('Location: ' . HOME_PAGE . 'closed_page.php');
     } else {
         setMessages('Data Base error!', 'warnings');

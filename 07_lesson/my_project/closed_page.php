@@ -10,10 +10,11 @@ require_once __DIR__ . '/functions/functions.php';
 include_once __DIR__ . '/config.php';
 include_once __DIR__ . '/functions/database.php';
 
-if (!checkAuth($connect)) {
+if (!checkAuth()) {
     setMessages('Page for authorized users!', 'warnings');
     header('Location: ' . HOME_PAGE);
 }
+
 
 // pagination
 $page = $_GET['page'] ?? 1;
